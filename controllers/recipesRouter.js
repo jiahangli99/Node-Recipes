@@ -21,4 +21,11 @@ recipesRouter.delete('/:id', (req, res) => {
         res.json(recipe)
     })
 })
+
+recipesRouter.get('/:id', (req, res) => {
+    Recipe.findById(req.params.id, (err, recipe) => {
+        res.json(recipe)
+    })
+})
+
 module.exports = recipesRouter
