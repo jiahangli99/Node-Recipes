@@ -9,4 +9,11 @@ recipesRouter.get('/', (req, res) => {
     })
 })
 
+recipesRouter.post('/', (req, res) => {
+    Recipe.create(req.body, (err, recipe) => {
+        console.log(req.body)
+        res.json(recipe)
+    })
+})
+
 module.exports = recipesRouter
