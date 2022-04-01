@@ -16,4 +16,9 @@ recipesRouter.post('/', (req, res) => {
     })
 })
 
+recipesRouter.delete('/:id', (req, res) => {
+    Recipe.findByIdAndDelete(req.params.id, (err, recipe) => {
+        res.json(recipe)
+    })
+})
 module.exports = recipesRouter
